@@ -51,8 +51,8 @@
                             words.forEach(word => {
                                 if (word != "") {
                                     wordCounts[word] = (wordCounts[word] || 0) + 1;
-                                    if (arr && arr.includes(a => a.word == word)) {
-                                        arr.includes(a => a.word == word)[0].count = wordCounts[word];
+                                    if (arr && arr.filter(a => a.word == word).length>0) {
+                                        arr.filter(a => a.word == word)[0].count = wordCounts[word];
                                     } else {
                                         arr.push({ word: word, count: wordCounts[word] });
                                     }
